@@ -5,6 +5,9 @@
 }
 body{
     background-color: rgb(104, 92, 92);
+    display: grid;
+    justify-content: center;
+    align-content: center;
 }
 
 div.form{
@@ -12,8 +15,53 @@ div.form{
     display: grid;
     justify-content: center;
     align-content: center;
-    /* min-height: 100vh;
-    grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(120px, auto) repeat(5, 100px); */
+
 
 }
+
+#form{
+    font-family: 'Tourney', cursive;
+    position: relative;
+    z-index: 1;
+    padding: 10px;
+    background-color: white;
+    border-radius: 5px ;
+    
+    
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+#form h1{
+    text-align: center;
+    color: black;
+    border: white;
+}
+#form label{
+    color: black;
+}
+input[type="text"],
+input[type="text"],
+input[type="url"]{
+    background: none;
+    border: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 30px;
+    color: black;
+    outline: none;
+    padding: 10px;
+}
+.btn{
+    padding: 12px 30px;
+    border-radius: 5px;
+    background: #0066A2;
+    color: black;
+    border-style: outset;
+    border-color: #0066A2;
+    height: 50px;
+    width: 100px;
+    font: bold 15px arial, sans-serif;
+    text-shadow:none;
+    vertical-align: middle;
+}
+
