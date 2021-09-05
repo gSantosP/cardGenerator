@@ -127,3 +127,17 @@ reset.addEventListener("click", function (param) {
     descricao.value = ""
     img.value = ""
 })
+// botao "Manual"
+var manual = document.getElementById("manual")
+manual.addEventListener("click", function(nReset){
+    nReset.preventDefault()
+    window.alert('Escolha uma imagem no google e clique em "Copiar link da imagem"\n Depois cole em "Url da imagem"')
+})
+
+var btnTime = document.getElementById("time")
+btnTime.addEventListener("click", function(nReset){
+    nReset.preventDefault()
+    window.location = "./alunos/index.html"
+})
+
+

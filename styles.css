@@ -62,6 +62,8 @@ input[type="url"]{
     width: 100px;
     font: bold 15px arial, sans-serif;
     text-shadow:none;
+    /* display: inline-table; */
     vertical-align: middle;
 }
+
 
