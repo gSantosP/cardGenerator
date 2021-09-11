@@ -1,15 +1,25 @@
+// parte usada para obter dados dos campos
 var nome = window.document.getElementById("nome")
-var valorNome = nome.value
+var valorNome = nome.value.trim();
 
 var descricao = window.document.getElementById("descricao")
-var valorDescricao = descricao.value
+var valorDescricao = descricao.value.trim();
 
 var img = window.document.getElementById("img")
-var valorImg = descricao.value
+var valorImg = descricao.value.trim();
 
+var campos = []
+campos.push(nome, valorImg, valorDescricao)
+console.log(campos)
 
+//****************** */
+// Meta: Refatorar esse codigo para POO, com um classe, e ao clicar no botao
+// gerar card, o programa deve instanciar um objeto com os nomes dos campo
+// e com os valores 
+//****************** */
 var enviar = window.document.getElementById("enviar")
-// generator
+
+// gerador de divs estilizadas com os campos preenchidos no forms
 enviar.addEventListener("click", function (nReset) {
     nReset.preventDefault()
     var divCard = document.createElement("div")
@@ -91,19 +101,13 @@ enviar.addEventListener("click", function (nReset) {
     stats.style.marginTop = "20px"
     stats.style.borderTop = "2px solid #000"
     stats.style.textAlign = "right"
-    // var pStats = document.createElement("p")
-    // pStats.style.marginTop = "-21px"
-    // pStats.style.textAlign = "left"
+
     stats.innerHTML = "ATK / 2500  &nbsp;  DEF / 1200"
     // stats.appendChild(pStats)
     divDescription.appendChild(stats)
-    // var cNome = document.createElement("p")
-    // cNome.appendChild(document.createTextNode(nome.value))
-    // divCard.appendChild(cNome)
 
-    // var cDesc = document.createElement("p")
-    // cDesc.appendChild(document.createTextNode(descricao.value))
-    // divCard.appendChild(cDesc)
+
+
 
     // var cImg = document.createElement("IMG")
     // cImg.setAttribute("src", `${img.value}`)
@@ -112,12 +116,19 @@ enviar.addEventListener("click", function (nReset) {
     // cImg.style.height = "10%"
     // divCard.appendChild(cImg)
     document.body.appendChild(divCard)
+    //************ */
+    //Validações
+    if(valorNome == "" && valorDescricao == "" && valorImg == ""){
+        window.alert("Por favor, preencha todos os campos")
+    }
+    if (valorNome > 150)
+    window.alert("Utilize menos de 150 caracteres")
 
 
 
 })
 
-// Reseter de Pagina e campos
+// Botao que eseta a Pagina e os campos
 var reset = window.document.getElementById("reset")
 
 reset.addEventListener("click", function (param) {
@@ -127,13 +138,13 @@ reset.addEventListener("click", function (param) {
     descricao.value = ""
     img.value = ""
 })
-// botao "Manual"
+// botao que "alerta" com o manual de instruções
 var manual = document.getElementById("manual")
 manual.addEventListener("click", function(nReset){
     nReset.preventDefault()
     window.alert('Escolha uma imagem no google e clique em "Copiar link da imagem"\n Depois cole em "Url da imagem"')
 })
-
+// botao que leva a pagina "time"
 var btnTime = document.getElementById("time")
 btnTime.addEventListener("click", function(nReset){
     nReset.preventDefault()
