@@ -66,7 +66,7 @@ enviar.addEventListener("click", function (nReset) {
     divCard.appendChild(pic)
     //dar append aqui?
 
-    /* Modifique essa parte do código
+    /* Modifiquei essa parte do código
     imgBox é uma div q contem a imagem da carta */
 
     var imgBox = document.createElement("div")
