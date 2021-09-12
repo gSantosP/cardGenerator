@@ -66,4 +66,7 @@ input[type="url"]{
     vertical-align: middle;
 }
 
+/* A ideia era usar a div (pBox) que contem o texto da descrição para pegar o tamanho da altura do texto
+associar ela a uma variavel, e então ter o font-size do texto relativo a essa variavel */
 
+    

@@ -65,12 +65,27 @@ enviar.addEventListener("click", function (nReset) {
     pic.style.margin = "5px 20px"
     divCard.appendChild(pic)
     //dar append aqui?
+
+    /* Modifique essa parte do código
+    imgBox é uma div q contem a imagem da carta */
+
+    var imgBox = document.createElement("div")
+    imgBox.setAttribute("id", "imgBox")
+    imgBox.style.height = "200px"    
+    imgBox.style.width = "220px"    
+    imgBox.style.margin = "5px"
+
     var picImg = document.createElement("img")
     picImg.setAttribute("src", `${img.value}`)
     picImg.style.border = "6px solid #545F7C"
     picImg.style.boxShadow = "2px 2px 2px rgba(0,0,0,.5)"
-    picImg.style.width = "98%"
-    divCard.appendChild(picImg)
+    picImg.style.width = "inherit"
+    picImg.style.height = "inherit"
+
+    imgBox.appendChild(picImg)
+    divCard.appendChild(imgBox)
+
+    /*Fim da primeira parte modificada por mim - Arthur */
 
     var divDescription = document.createElement("div")
     divDescription.setAttribute("id", "description")
@@ -87,14 +102,26 @@ enviar.addEventListener("click", function (nReset) {
     h2.style.fontStyle = "normal"
     divDescription.appendChild(h2)
 
+    /* Segunda parte que eu modifiquei tentar ajustar o texto da descrição. Nao consegui resolver 
+    entao nao fez nenhuma diferença real e visual no site por enquanto. A tag p so esta dentro de
+     uma div chamada pBox. (E no fim do arquivo css tem um comentario explicando qual era a minha ideia inicial) */ 
+    
+    var pBox = document.createElement("div")
+    pBox.style.height = "fit-content"
+    pBox.style.display = "flex"
+    pBox.style.textAlign = "justify"
+    divDescription.appendChild(pBox)
+
     var p = document.createElement("p")
     p.innerHTML = `${descricao.value}`
+    p.setAttribute("class", "textoDesc")
     p.style.fontStyle = "italic"
-    p.style.fontSize = "19px"
     p.style.margin = "0"
-    divDescription.appendChild(p)
+    pBox.appendChild(p)
 
     divCard.appendChild(divDescription)
+
+    /* Fim da segunda parte do codigo que eu alterei - Arthur */
 
     var stats = document.createElement("div")
     stats.setAttribute("id", "stats")
